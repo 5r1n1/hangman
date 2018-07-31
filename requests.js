@@ -8,7 +8,7 @@ const generatePuzzle = (wordCount = 0) => new Promise ((resolve, reject) => {
     })
 
     wordCount && wordCount < 10 ? 
-        req.open('GET', `http://puzzle.mead.io/puzzle?wordCount=${wordCount}`) :
-        req.open('GET', 'http://puzzle.mead.io/puzzle/')
+        req.open('GET', `https://puzzle.mead.io/puzzle?wordCount=${wordCount}`) :
+        req.open('GET', 'https://puzzle.mead.io/puzzle/')
     req.send()
 })
