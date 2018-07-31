@@ -15,7 +15,7 @@ const renderGame = game => {
     } else document.querySelector('#guess').disabled = false
 }
 
-generatePuzzle(3).then (
+generatePuzzle().then (
     puzzle => renderGame (game1 = new Hangman (puzzle, maxTries)),
     err => {throw err})
 
@@ -35,5 +35,7 @@ document.querySelector('#word-count').addEventListener('input', (e) => {
 
 document.querySelector('#new-game-form').addEventListener('submit', e => {
     e.preventDefault()
-    generatePuzzle (e.target.elements.wordCount.value)
+    generatePuzzle (e.target.elements.wordCount.value).then (
+        puzzle => renderGame (game1 = new Hangman (puzzle, maxTries)),
+        err => {throw err})
 })
