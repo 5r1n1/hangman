@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Hangman - JS BootCamp</title>
+        <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+    </head>
+    <body>
+        <h1><center>Hangman</center></h1><br>
+        <p style="line-height:0">Guess the word below!</p>
+        <h2 id="display-word" style="letter-spacing:0.3em"></h2><br>
+        <form id="guess-form">
+            <label>Guess a letter:
+                <input id="guess" name="guess" size=1 maxlength=1>
+                <a id="guess-msg" style="margin-left:5px"></a>
+            </label>
+        </form><br>
+        <label>Letters guessed: <a id="guessed"></a></label><br><br>
+        <label>Guesses remaining: <a id="tries-left"></a></label><br><br>
+        <form id="new-game-form">
+            <button id="new-game">New Game</button>
+            <input id="word-count" name="wordCount" size=1 maxlength=1>
+            <a id="new-game-msg" name="newGameMsg" style="margin-left:5px"></a>
+        </form>
+        <script src="requests.js"></script>
+        <script src="hangman.js"></script>
+        <script src="app.js"></script>
+    </body>
+</html>
