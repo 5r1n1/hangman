@@ -1,5 +1,5 @@
-const generatePuzzle = (wordCount = 2) =>
-    fetch(`https://puzzle.mead.io/puzzle?wordCount=${wordCount}`).then (resp => {
-        if (resp.status === 200) return resp.json().puzzle
-        else throw new Error ('Unable to fetch puzzle') 
-    }).catch (error => console.log (error))
+const generatePuzzle = (wordCount = 2) => 
+    fetch (`https://puzzle.mead.io/puzzle?wordCount=${wordCount}`)
+        .then (resp => resp.status === 200 ? resp.json() : Error (`Unable to fetch puzzle. HTTP Status - ${resp.status}`))
+        .then (data => data.puzzle)
+        .catch (error => console.log (error))
