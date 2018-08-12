@@ -1,0 +1,84 @@
+* {
+    box-sizing: border-box;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    background: #2B292E;
+    color: #fafafa;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 3vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 70vh;
+}
+
+span {
+    border-bottom: 1px solid #534f59;
+    display: inline-block;
+    font-size: 2rem;
+    height: 2.4rem;
+    line-height: 2.4rem;
+    margin: 0 .1rem;
+    text-align: center;
+    text-transform: uppercase;
+    width: 2.4rem;
+}
+
+p {
+    font-weight: 300;
+    margin-bottom: .8rem;
+}
+
+.button {
+    background: #7044a0;
+    border: none;
+    border-bottom: 2px solid #603a88;
+    cursor: pointer;
+    color: white;
+    font-size: 3vh;
+    font-weight: 500;
+    padding: .4vh;
+    transition: background .3s ease, color .3s ease;
+}
+
+.input{
+    font-size: 3vh;
+    width: 4vh
+}
+
+.button:hover {
+    background: #5F3A87;
+}
+
+#display-word {
+    color: orange;
+    letter-spacing: 0.3em;
+    display: flex;
+    margin-top: 3vh;
+    margin-bottom: 3vh;
+}
+
+/* #guess-msg {
+    align-self: right;
+} */
+
+/* p, label {
+    color: red;
+}
+
+button{
+    background: lightgrey;
+}
+
+#display-word {
+    color: purple;
+    letter-spacing: 0.3em;
+} */

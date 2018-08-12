@@ -5,13 +5,17 @@ const maxTries = 7
 
 const renderGame = game => {
     document.querySelector('#display-word').textContent = game.puzzle
+    document.querySelector('#display-word').setAttribute('style', 'initial') 
     document.querySelector('#guess').value = ''
     document.querySelector('#guess-msg').textContent = game.statusMsg
     document.querySelector('#guessed').textContent = game.guesses.toString()
+    document.querySelector('#remaining').textContent = game.lettersRemaining.toString()
     document.querySelector('#tries-left').textContent = `${game.remainingAttempts}/${game.maxAttempts}`
-    if (game.status === 'won' || game.status === 'lost' ) {
-        document.querySelector('#guess').disabled = true
+    if (game.status === 'won' || game.status === 'lost' ) {    
         document.querySelector('#display-word').textContent = game.originalWord
+        document.querySelector('#display-word').setAttribute('style',
+            (game.status === 'won') ? 'color:chartreuse' : 'color:orangered')
+        document.querySelector('#guess').disabled = true
     } else document.querySelector('#guess').disabled = false
 }
 

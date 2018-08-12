@@ -6,6 +6,7 @@ class Hangman {
         this.remainingAttempts = maxAttempts
         this.guesses = []
         this.status = 'playing'
+        this.lettersRemaining = Array.from('etaoinsrhldcumfpgwybvkxjqz')
     }
 
     get statusMsg () { 
@@ -33,6 +34,8 @@ class Hangman {
         else if (this.guesses.includes(letter)) this.status = 'guessed'
         else {
             this.guesses.push(letter)
+            this.lettersRemaining.splice (
+                this.lettersRemaining.findIndex (e => e === letter), 1)
             if (this.originalWord === this.puzzle) this.status = 'won'
             else {
                 if (!this.wordArray.includes(letter)) this.remainingAttempts--
