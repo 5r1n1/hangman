@@ -7,6 +7,7 @@ const generatePuzzle = async (wordCount = 2) => {
     else throw Error ('Error fetching puzzle')
 }
 
+// async await is faster - dunno why
 // const generatePuzzle = (wordCount = 2) => fetch (`https://puzzle.mead.io/puzzle?wordCount=${wordCount}`)
 //     .then (resp => resp.status === 200 ? resp.json() : Error (`Unable to fetch puzzle. HTTP Status - ${resp.status}`))
 //     .then (data => data.puzzle)

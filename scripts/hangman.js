@@ -29,6 +29,20 @@ class Hangman {
         return dW
     }
 
+    get guessedLetters () {
+        const a = document.createElement('a')
+        this.guesses.forEach (letter => {
+            const s = document.createElement ('span')
+            if (a.childElementCount) a.insertAdjacentText ('beforeend', ',')
+            this.wordArray.includes (letter) ? 
+                s.setAttribute ('class', 'goodGuess') :
+                s.setAttribute ('class', 'badGuess')
+            s.textContent = letter
+            a.appendChild(s)
+        })
+        return a.innerHTML
+    }
+
     guess (letter) {
         if (letter < 'a' || letter > 'z') this.status = 'invalid'
         else if (this.guesses.includes(letter)) this.status = 'guessed'
