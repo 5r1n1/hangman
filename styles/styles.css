@@ -49,6 +49,10 @@ p {
     transition: background .3s ease, color .3s ease;
 }
 
+.button:hover {
+    background: #5F3a87;
+}
+
 .input{
     font-size: 3vh;
     width: 4vh;
