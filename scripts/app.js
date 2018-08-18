@@ -4,11 +4,11 @@ let game1
 const maxTries = 7
 
 const renderGame = game => {
-    document.querySelector('#display-word').textContent = game.puzzle
     document.querySelector('#display-word').setAttribute('style', 'initial') 
+    document.querySelector('#display-word').textContent = game.puzzle
     document.querySelector('#guess').value = ''
     document.querySelector('#guess-msg').textContent = game.statusMsg
-    document.querySelector('#guessed').textContent = game.guesses.toString()
+    document.querySelector('#guessed').innerHTML = game.guessedLetters
     document.querySelector('#remaining').textContent = game.lettersRemaining.toString()
     document.querySelector('#tries-left').textContent = `${game.remainingAttempts}/${game.maxAttempts}`
     if (game.status === 'won' || game.status === 'lost' ) {    
