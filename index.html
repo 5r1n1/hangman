@@ -12,7 +12,7 @@
             <h2 id="display-word"></h2><br><br>
             <form id="guess-form">
                 <label>Guess a letter:
-                    <input id="guess" name="guess" class="input" size=1 maxlength=1>
+                    <input id="guess" name="guess" class="input" size=1 maxlength=1 autofocus>
                     <a id="guess-msg" style="margin-left:5px"></a>
                 </label>
             </form><br>
@@ -21,10 +21,12 @@
             <label>Guesses remaining: <a id="tries-left"></a></label><br><br>
             <form id="new-game-form">
                 <button id="new-game" class="button">New Game</button>
-                <input id="word-count" name="wordCount" class="input" size=1 maxlength=1>
+                <input id="word-count" name="wordCount" class="input"
+                    size=1 maxlength=1 value=2>
                 <a id="new-game-msg" name="newGameMsg" style="margin-left:5px"></a>
             </form>
         </div>
+        <script src="scripts/sounds.js"></script>
         <script src="scripts/requests.js"></script>
         <script src="scripts/hangman.js"></script>
         <script src="scripts/app.js"></script>
