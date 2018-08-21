@@ -13,14 +13,15 @@ class Hangman {
         let msg = ''
         switch (this.status) {
             case 'playing': msg = ''; break
-            case 'invalid': msg = 'Please enter a letter'; break
-            case 'guessed': msg = 'You already guessed this'; break
-            case 'lost': msg = 'You lost!!'; break
-            case 'won': msg = 'You Won!!'; break
+            // case 'invalid': msg = 'Please enter a letter'; playError(); break
+            case 'guessed': msg = 'You already guessed this'; playError(); break
+            case 'lost': msg = 'You lost!!';  playLoseGame(); break
+            case 'won': msg = 'You Won!!'; playWinGame(); break
         }    
         return msg
     }
 
+    /* generate the dynamic puzzle string for display */
     get puzzle () {
         let dW = ''
         this.wordArray.forEach((lW, i) => 
@@ -29,6 +30,7 @@ class Hangman {
         return dW
     }
 
+    /* create a coloured string of guessed letters */
     get guessedLetters () {
         const a = document.createElement('a')
         this.guesses.forEach (letter => {
@@ -47,6 +49,7 @@ class Hangman {
         if (letter < 'a' || letter > 'z') this.status = 'invalid'
         else if (this.guesses.includes(letter)) this.status = 'guessed'
         else {
+            this.wordArray.includes (letter) ? playGoodGuess () : playBadGuess ()
             this.guesses.push(letter)
             this.lettersRemaining.splice (
                 this.lettersRemaining.findIndex (e => e === letter), 1)
